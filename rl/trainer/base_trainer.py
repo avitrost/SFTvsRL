@@ -35,7 +35,7 @@ class BaseTrainer:
         
         self.accelerator = accelerator
         self.save_ckpt = save_ckpt
-        self.save_every = None
+        self.save_every = save_every
         init_seed(seed + self.accelerator.local_process_index)
         self.total_num_steps = 0 # used for logging
         self.env = gym.make(**env_config, language_only=prompt_config.use_language)
